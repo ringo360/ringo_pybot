@@ -1,12 +1,4 @@
-#import discord
-#import discord.app_commands
-#
-#client = discord.Client()
-#tree = discord.app_commands.CommandTree(client) 
-#intents = discord.Intents.default()
-#intents.message_content = True
-#bot = commands.Bot(command_prefix="d.", intents=intents)
-
+#ringoXD python bot
 
 import discord
 from discord import commands,Permissions
@@ -17,24 +9,14 @@ import os
 os.system("cls")
 
 token = "token"
+client = discord.Client()
+bot = commands.Bot(command_prefix="r!", help_command=None, intents=discord.Intents.all())
 
+#======================================================
 
-
-bot = commands.Bot(command_prefix="!", help_command=None, intents=discord.Intents.all())
-
-@tree.command(
-    name="slashtest",
-    description="python is easy? = Idk LOL"
-)
-
-async def hoge(ctx:discord.Interaction):
-	await ctx.responce.send_message("This is Python bot! :D")
-
-@bot.command(name="test")
-async def testcmd(ctx):
-	await ctx.send(f"{ctx.message.author.name}ｻﾝ, ｺﾝﾆﾁﾊｧｧｧ!")
-
+#Ready Event
 @client.event
 async def on_ready():
     print(Fore.LIGHTBLUE_EX + Back.BLACK + "ringoxd's pybot is ready!")
 client.run(token)
+
