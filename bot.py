@@ -20,3 +20,9 @@ async def on_ready():
     print(Fore.LIGHTBLUE_EX + Back.BLACK + "ringoxd's pybot is ready!")
 client.run(token)
 
+@client.event
+async def on_message(message):
+	if message.author.bot:
+		return
+	if message.content == "!help":
+		await message.channel.send("作成中")
